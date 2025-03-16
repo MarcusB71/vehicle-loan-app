@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="471.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.senecapolytechnic.loanapplication.controller.AutoLoanController">
+   <children>
+      <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="471.0" prefWidth="600.0">
+         <children>
+            <GridPane prefHeight="417.0" prefWidth="501.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="555.3333333333333" minWidth="10.0" prefWidth="478.3333740234375" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="126.66666666666667" minHeight="10.0" prefHeight="126.66666666666667" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="223.33330790201825" minHeight="10.0" prefHeight="122.66666666666667" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="181.3333435058594" minHeight="10.0" prefHeight="172.66665649414065" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <VBox prefHeight="127.0" prefWidth="501.0">
+                     <children>
+                        <Label text="Customer Info">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <GridPane prefHeight="105.0" prefWidth="555.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.9999694824219" minWidth="10.0" prefWidth="78.6666742960612" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="475.9999923706054" minWidth="10.0" prefWidth="475.9999923706054" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Name:">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Phone:" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="City:" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="nameField" GridPane.columnIndex="1" />
+                              <TextField fx:id="phoneField" prefHeight="25.0" prefWidth="376.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="cityField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Province:" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <ChoiceBox fx:id="provinceChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="Vehicle Info">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="508.6666259765625" minWidth="10.0" prefWidth="80.66665649414062" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="486.000020345052" minWidth="10.0" prefWidth="474.66667683919263" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Type:">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Age:" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Price:" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <RadioButton fx:id="newOption" mnemonicParsing="false" text="New">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="vehicleAgeToggle" />
+                                       </toggleGroup></RadioButton>
+                                    <RadioButton fx:id="usedOption" mnemonicParsing="false" text="Used" toggleGroup="$vehicleAgeToggle">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </RadioButton>
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="23.0" prefWidth="475.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <RadioButton fx:id="carOption" mnemonicParsing="false" text="Car">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="vehicleTypeToggle" />
+                                       </toggleGroup></RadioButton>
+                                    <RadioButton fx:id="truckOption" mnemonicParsing="false" text="Truck" toggleGroup="$vehicleTypeToggle">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </RadioButton>
+                                    <RadioButton fx:id="vanOption" mnemonicParsing="false" text="Family Van" toggleGroup="$vehicleTypeToggle">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </RadioButton>
+                                 </children>
+                              </HBox>
+                              <TextField fx:id="loanAmountField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="157.0" prefWidth="487.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label text="Loan Info">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.9999694824219" minWidth="10.0" prefWidth="135.66665649414062" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="419.3333435058594" minWidth="10.0" prefWidth="419.3333435058594" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Down Payment:">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Interest Rate:" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Loan Duration:" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="downPaymentField" GridPane.columnIndex="1" />
+                              <Label text="Payment Frequency:" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="346.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <children>
+                                    <RadioButton fx:id="weeklyOption" mnemonicParsing="false" text="Weekly">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="paymentFrequencyToggle" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="biWeeklyOption" mnemonicParsing="false" text="Bi-Weekly" toggleGroup="$paymentFrequencyToggle">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </RadioButton>
+                                    <RadioButton fx:id="monthlyOption" mnemonicParsing="false" text="Monthly" toggleGroup="$paymentFrequencyToggle">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </RadioButton>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <RadioButton fx:id="rbInterest099" mnemonicParsing="false" text="0.99%">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="interestRateToggle" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbInterest199" mnemonicParsing="false" text="1.99%" toggleGroup="$interestRateToggle">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbInterest299" mnemonicParsing="false" text="2.99%" toggleGroup="$interestRateToggle">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbInterestOther" mnemonicParsing="false" text="Other" toggleGroup="$interestRateToggle">
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </RadioButton>
+                                    <TextField fx:id="customInterestRateField" prefHeight="25.0" prefWidth="44.0" promptText="0.00">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="\%">
+                                       <HBox.margin>
+                                          <Insets left="2.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label fx:id="loanDurationTracker" text="12 mon" textOverrun="CLIP">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Slider fx:id="loanDurationSlider" blockIncrement="12.0" majorTickUnit="12.0" max="96.0" min="12.0" minorTickCount="1" prefHeight="24.0" prefWidth="365.0" showTickLabels="true" showTickMarks="true" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
+                        <HBox prefHeight="28.0" prefWidth="485.0">
+                           <children>
+                              <Label text="Estimated Fixed Rate Loan Payment:">
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="fixedRateLoanPayment" text="0">
+                                 <HBox.margin>
+                                    <Insets left="1.0" top="5.0" />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="15.0" top="15.0" />
+               </VBox.margin>
+            </GridPane>
+            <HBox alignment="CENTER" prefHeight="39.0" prefWidth="600.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#clearFields" text="Clear" />
+                  <Button mnemonicParsing="false" onAction="#calculateLoan" text="Calculate">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#saveCurrentRate" text="Save">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#openSavedRatesView" text="Show Saved Rates">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#openAmortizationSchedule" text="Amortization Schedule">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
